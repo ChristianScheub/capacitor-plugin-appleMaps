@@ -1,7 +1,7 @@
 {
   "name": "capacitor-apple-maps-native-sdk",
-  "version": "0.0.1",
-  "description": "dd",
+  "version": "0.0.2",
+  "description": "The capacitor-apple-maps-native-sdk is a Capacitor plugin that provides access to the native iOS Apple Maps SDK for developers to integrate Apple Maps into their mobile applications.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
