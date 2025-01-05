@@ -19,10 +19,10 @@ export class appleMapsSdkWeb extends WebPlugin implements appleMapsSdkPlugin {
     throw new Error('Method not implemented.');
   }
   setValuesAppleMaps(options: { dataPoints: { latitude: number; longitude: number; label: string; }[]; }): Promise<{ status: string; }> {
-    throw new Error('Method not implemented.');
+    throw new Error('Method not implemented.'+options);
   }
   setCenterPoint(options: { latitude: number; longitude: number; }): Promise<{ status: string; }> {
-    throw new Error('Method not implemented.');
+    throw new Error('Method not implemented.'+options);
   }
   closeAppleMap(): Promise<{ status: string; }> {
     throw new Error('Method not implemented.');
