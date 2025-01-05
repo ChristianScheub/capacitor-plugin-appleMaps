@@ -1,6 +1,6 @@
 # apple-maps-sdk
 
-dd
+The apple-maps-sdk is a Capacitor plugin that provides access to the native iOS Apple Maps SDK for developers to integrate Apple Maps into their mobile applications. This plugin allows users to utilize the native Apple Maps API to display maps, set markers, and adjust the map’s center point directly within their app. Features such as showing and hiding the map, adding custom data points, and checking if the map is visible are included. It also supports managing the current location and other map settings using native iOS functionality. This plugin is perfect for developers who want to leverage the full capabilities of Apple’s native map features on iOS devices.
 
 ## Install
 

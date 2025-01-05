@@ -1,5 +1,5 @@
 {
-  "name": "apple-maps-sdk",
+  "name": "capacitor-apple-maps-native-sdk",
   "version": "0.0.1",
   "description": "dd",
   "main": "dist/plugin.cjs.js",
@@ -7,8 +7,6 @@
   "types": "dist/esm/index.d.ts",
   "unpkg": "dist/plugin.js",
   "files": [
-    "android/src/main/",
-    "android/build.gradle",
     "dist/",
     "ios/Sources",
     "ios/Tests",
@@ -19,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChristianScheub/Typescript_NextParty.git"
+    "url": "git+https://github.com/ChristianScheub/capacitor-plugin-appleMaps.git"
   },
   "bugs": {
-    "url": "https://github.com/ChristianScheub/Typescript_NextParty/issues"
+    "url": "https://github.com/ChristianScheub/capacitor-plugin-appleMaps/issues"
   },
   "keywords": [
     "capacitor",
