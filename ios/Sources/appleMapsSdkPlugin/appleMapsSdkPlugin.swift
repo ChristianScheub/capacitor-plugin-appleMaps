@@ -144,21 +144,56 @@ public class appleMapsSdkPlugin: CAPPlugin, CAPBridgedPlugin, CLLocationManagerD
             }
 
             self.mapView?.removeAnnotations(self.mapView?.annotations ?? [])
+            
 
             for point in dataPoints {
+                print(point)
                 if let lat = point["latitude"] as? Double,
                    let lon = point["longitude"] as? Double,
                    let label = point["label"] as? String {
+                    
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
                     annotation.title = label
+                    
+                    // Überprüfe, ob "startDate" und "endDate" vorhanden sind und ob sie sich unterscheiden
+                    if let startDate = point["startDate"] as? String, let endDate = point["endDate"] as? String {
+                        if startDate == endDate {
+                            // Wenn beide gleich sind, zeige nur ein Datum
+                            annotation.subtitle = "\(startDate):"
+                        } else {
+                            // Wenn sie unterschiedlich sind, zeige beide an
+                            annotation.subtitle = "\(startDate) - \(endDate):"
+                        }
+                    }
+                    
+                    // Überprüfe, ob "description" einen Wert hat
+                    if let descriptionEvent = point["description"] as? String, !descriptionEvent.isEmpty {
+                        // Füge die Beschreibung hinzu, wenn vorhanden
+                        if annotation.subtitle != nil {
+                            annotation.subtitle? += " \(descriptionEvent)"
+                        } else {
+                            annotation.subtitle = descriptionEvent
+                        }
+                    }
+                    
                     self.mapView?.addAnnotation(annotation)
                 }
             }
 
+
             call.resolve(["status": "success"])
         }
     }
+    
+    func randomColor() -> UIColor {
+            return UIColor(
+                red: .random(in: 0...1),
+                green: .random(in: 0...1),
+                blue: .random(in: 0...1),
+                alpha: 1.0
+            )
+        }
 
     @objc func setCenterPoint(_ call: CAPPluginCall) {
         DispatchQueue.main.async {
@@ -183,4 +218,5 @@ public class appleMapsSdkPlugin: CAPPlugin, CAPBridgedPlugin, CLLocationManagerD
             call.resolve(["status": "success"])
         }
     }
+    
 }
